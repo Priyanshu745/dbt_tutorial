@@ -48,6 +48,3 @@ Lints the project files.
 
 Serves the `dist` folder locally for previewing the production build.
 
-## Learn More
-
-You can learn more in the [Vite documentation](https://vitejs.dev/guide/) and [React documentation](https://react.dev/).
