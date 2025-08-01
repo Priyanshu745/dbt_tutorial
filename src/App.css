@@ -1,0 +1,321 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8; /* Light grey-blue background */
+    color: #2c3e50; /* Dark blue-grey for general text */
+    line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 288px; /* 18rem */
+    background: linear-gradient(to bottom, #e0eafc, #c7d9f8); /* Light blue gradient */
+    border-right: 1px solid #b0c4de;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 20;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.sidebar-title {
+    font-size: 1.5rem; /* 2xl */
+    font-weight: 700;
+    color: #34495e; /* Darker blue-grey for title */
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding: 0 0.75rem;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 0.625rem 0.75rem; /* py-2.5 px-3 */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem; /* text-sm */
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 0.25rem;
+    color: #5a6a7a; /* Medium blue-grey for sidebar links */
+    text-decoration: none;
+}
+
+.sidebar-link:hover {
+    background-color: #dbe9ff; /* Lighter blue hover color */
+    color: #2c3e50; /* Dark blue-grey for text on hover */
+}
+
+.sidebar-link-active {
+    background-color: #4a69bd; /* A strong blue for active link */
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 288px; /* 18rem */
+    padding: 3rem;
+    width: calc(100% - 288px);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.content-wrapper {
+    max-width: 896px; /* 4xl */
+    margin: 0 auto;
+}
+
+/* Chapter Styles */
+.chapter-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeIn 0.8s ease-out forwards;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.chapter-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: linear-gradient(
+        45deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    animation: shimmer 4s infinite linear;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.chapter-title {
+    font-size: 2.25rem; /* 4xl */
+    font-weight: 700;
+    color: #2c3e50; /* Dark blue-grey for chapter title */
+    border-bottom: 2px solid #4a69bd; /* Strong blue for border */
+    padding-bottom: 0.75rem;
+}
+
+.chapter-subtitle {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 600;
+    color: #34495e; /* Darker blue-grey for subtitle */
+}
+
+.chapter-paragraph {
+    font-size: 1.125rem; /* text-lg */
+    color: #5a6a7a; /* Medium blue-grey for paragraph */
+}
+
+.chapter-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list-item-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.75rem; /* xl */
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    transition: all 0.2s ease-in-out;
+}
+.list-item-card:hover {
+    box-shadow: 0 6px 10px -1px rgb(0 0 0 / 0.15), 0 3px 6px -2px rgb(0 0 0 / 0.1);
+    transform: translateY(-3px) scale(1.01);
+}
+
+.list-item-emoji {
+    font-size: 1.875rem; /* 3xl */
+    margin-right: 1rem;
+}
+
+.chapter-list-disc {
+    list-style: disc;
+    padding-left: 1.5rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    border: 1px solid #b0c4de;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+/* Card and Workflow Styles */
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border: 1px solid #b0c4de;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #34495e; /* Darker blue-grey for card title */
+}
+
+.workflow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.workflow-label {
+    font-weight: 600;
+    color: #5a6a7a; /* Medium blue-grey for workflow label */
+}
+
+.workflow-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: #f0f4f8;
+    border-radius: 0.5rem;
+    border: 1px solid #b0c4de;
+}
+
+.workflow-diagram .arrow {
+    color: #7f8c8d; /* Grey for arrows */
+}
+
+.workflow-highlight-red {
+    font-weight: 700;
+    color: #c0392b; /* Darker red */
+    background-color: #fbe9e7; /* Lighter red background */
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+}
+
+/* New Animation for content entry */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.figure {
+  display: inline-block;
+  margin: 16px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.figure-caption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+
+/* DAG Diagram Styles */
+.dag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.dag-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0.5rem 0;
+}
+
+.dag-node {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dag-node-source {
+    background-color: #e3f2fd;
+    border: 2px solid #90caf9;
+    color: #1565c0;
+}
+
+.dag-node-model {
+    background-color: #e8f5e9;
+    border: 2px solid #a5d6a7;
+    color: #2e7d32;
+}
+
+.dag-node-mart {
+    background-color: #fff3e0;
+    border: 2px solid #ffcc80;
+    color: #e65100;
+}
+
+.dag-arrow {
+    font-size: 1.5rem;
+    color: #757575;
+    margin: 0.5rem 0;
+}
