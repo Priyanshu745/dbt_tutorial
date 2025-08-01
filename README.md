@@ -1,12 +1,53 @@
-# React + Vite
+# Data Build Tool (dbt)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About This Project
 
-Currently, two official plugins are available:
+This project is focused on the Data Build Tool (dbt). It likely contains dbt models, tests, and other configurations for transforming and modeling data in a data warehouse.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
 
-## Expanding the ESLint configuration
+- `public/`: Static assets.
+- `src/`: Source code.
+  - `App.jsx`: Main React component.
+  - `main.jsx`: Entry point for the React application.
+  - `App.css`: Styles for `App.jsx`.
+  - `index.css`: Global styles.
+- `index.html`: Main HTML file.
+- `vite.config.js`: Vite configuration.
+- `package.json`: Project dependencies and scripts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm install`
+
+Installs the dependencies.
+
+### `npm run dev`
+
+Runs the app in development mode.
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
+
+### `npm run build`
+
+Builds the app for production to the `dist` folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
+
+### `npm run lint`
+
+Lints the project files.
+
+### `npm preview`
+
+Serves the `dist` folder locally for previewing the production build.
+
+## Learn More
+
+You can learn more in the [Vite documentation](https://vitejs.dev/guide/) and [React documentation](https://react.dev/).
